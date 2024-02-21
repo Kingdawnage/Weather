@@ -23,8 +23,6 @@ namespace Weather.mvvm.model
 
                 var value = await response.Content.ReadFromJsonAsync<DataClass.Rootobject>();
 
-                Console.Write(value);
-
                 return value;
 
             }

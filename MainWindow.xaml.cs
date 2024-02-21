@@ -8,6 +8,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Weather.mvvm.model;
 
 namespace Weather
 {
@@ -19,6 +20,7 @@ namespace Weather
         public MainWindow()
         {
             InitializeComponent();
+            ApiHelper.InitializeClient();
         }
     }
 }

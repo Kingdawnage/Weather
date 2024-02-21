@@ -116,11 +116,10 @@
                             Grid.Row="1"
                             Grid.Column="0">
 
-                    <Image Source="/assets/images/rias.jpg"
+                    <Image Source="{Binding FixedStatusImage}"
                            Height="200"
                            Margin="25"
-                           Stretch="Uniform"
-                           x:Name="statusImage" />
+                           Stretch="Uniform"/>
 
                     <TextBlock VerticalAlignment="Center"
                                HorizontalAlignment="Left"
@@ -135,16 +134,16 @@
 
                     <StackPanel Orientation="Horizontal">
 
-                        <Image Source="/assets/images/day/113.png"
+                        <Image Source="{Binding FixedStatusImage}"
                                Width="40"
                                Height="40"
-                               Margin="35,0,0,0" />
+                               Margin="35,0,0,0"
+                               Stretch="Uniform"/>
 
-                        <TextBlock Text="Mostly Cloudy"
+                        <TextBlock Text="{Binding ConditionText}"
                                    VerticalAlignment="Center"
                                    HorizontalAlignment="Center"
-                                   FontSize="16"
-                                   x:Name="conditionText" />
+                                   FontSize="16"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
@@ -162,7 +161,7 @@
 
                     <TextBlock Margin="45,0,0,0"
                                FontSize="30"
-                               x:Name="locationName" />
+                               Text="{Binding LocationName}"/>
 
                 </StackPanel>
 
