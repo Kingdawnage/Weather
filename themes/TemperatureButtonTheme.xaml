@@ -1,0 +1,42 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style BasedOn="{StaticResource {x:Type ToggleButton}}"
+           TargetType="{x:Type RadioButton}"
+           x:Key="TemperatureButton">
+        <Style.Setters>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="RadioButton">
+                        <Border Width="30"
+                                Height="30"
+                                CornerRadius="50"
+                                Background="{TemplateBinding Background}"
+                                x:Name="buttonBackground">
+                            <Grid>
+                                <TextBlock Text="{TemplateBinding Property=Content}"
+                                           VerticalAlignment="Center"
+                                           HorizontalAlignment="Center"
+                                           Margin="0,0,0,0"
+                                           FontSize="14"
+                                           x:Name="textContent">
+                                    <TextBlock.Foreground>
+                                        <SolidColorBrush Color="Black"/>
+                                    </TextBlock.Foreground>
+                                </TextBlock>
+                            </Grid>
+                        </Border>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="textContent" Property="TextBlock.Foreground" 
+                                        Value="White"/>
+                                <Setter TargetName="buttonBackground" Property="Background" Value="Black"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+</ResourceDictionary>

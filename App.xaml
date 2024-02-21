@@ -2,8 +2,22 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Weather"
+             xmlns:view="clr-namespace:Weather.mvvm.view"
+             xmlns:viewModel="clr-namespace:Weather.mvvm.viewmodel"
              StartupUri="MainWindow.xaml">
+    
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="themes/SearchBarTheme.xaml"/>
+                <ResourceDictionary Source="themes/TabButtonTheme.xaml"/>
+                <ResourceDictionary Source="themes/TemperatureButtonTheme.xaml"/>
+                <ResourceDictionary Source="themes/SearchButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

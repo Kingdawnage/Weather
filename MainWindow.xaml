@@ -4,9 +4,172 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Weather"
+        xmlns:viewModel="clr-namespace:Weather.mvvm.viewmodel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Weather"
+        Height="600"
+        Width="920"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="NoResize">
 
-    </Grid>
+    <Window.DataContext>
+        <viewModel:MainViewModel />
+    </Window.DataContext>
+
+    <Border Background="White"
+            CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="230" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="100" />
+                <RowDefinition Height="500" />
+            </Grid.RowDefinitions>
+
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        Grid.Column="0"
+                        VerticalAlignment="Center">
+
+                <TextBox Width="180"
+                         Height="30"
+                         VerticalAlignment="Center"
+                         HorizontalAlignment="Left"
+                         Grid.Column="0"
+                         Grid.Row="0"
+                         Style="{StaticResource ModernSearchBar}"
+                         Margin="5,0,0,0"
+                         Text="{Binding SearchBoxText}" />
+
+                <Button Grid.Row="0"
+                        Grid.Column="0"
+                        Style="{StaticResource SearchButton}"
+                        Margin="10,0,0,0"
+                        Background="White"
+                        Command="{Binding SearchButtonPressedCommand}">
+                </Button>
+
+            </StackPanel>
+
+            <ContentControl Grid.Row="2"
+                            Grid.Column="2"
+                            Margin="0"
+                            Content="{Binding CurrentView}" />
+
+            <Border Background="#dcdcdc"
+                    Grid.Column="1"
+                    Grid.Row="0"
+                    CornerRadius="0,20,0,0" />
+
+            <StackPanel Orientation="Horizontal"
+                        Width="200"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Left"
+                        Margin="20,0,0,0">
+                <RadioButton Grid.Row="0"
+                             Grid.Column="1"
+                             Style="{StaticResource TabButton}"
+                             Height="50"
+                             Width="100"
+                             Content="Home"
+                             IsChecked="True" />
+
+                <RadioButton Grid.Row="0"
+                             Grid.Column="1"
+                             Style="{StaticResource TabButton}"
+                             Content="Weekly" />
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal"
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Right"
+                        Margin="0,0,25,0">
+
+                <RadioButton Grid.Row="0"
+                             Grid.Column="1"
+                             Content="C"
+                             Margin="0,0,10,0"
+                             IsChecked="True"
+                             Style="{StaticResource TemperatureButton}" />
+
+                <RadioButton Grid.Row="0"
+                             Grid.Column="1"
+                             Content="F"
+                             Style="{StaticResource TemperatureButton}" />
+            </StackPanel>
+
+            <Border Grid.Column="0"
+                    Grid.Row="1"
+                    Background="Transparent">
+                <StackPanel Orientation="Vertical"
+                            Grid.Row="1"
+                            Grid.Column="0">
+
+                    <Image Source="/assets/images/rias.jpg"
+                           Height="200"
+                           Margin="25"
+                           Stretch="Uniform"
+                           x:Name="statusImage" />
+
+                    <TextBlock VerticalAlignment="Center"
+                               HorizontalAlignment="Left"
+                               Margin="45,0,0,0"
+                               FontSize="56"
+                               Text="{Binding CurrentTemp}" />
+
+                    <TextBlock Text="Monday, 16:00"
+                               FontSize="26"
+                               Margin="45,0,0,0"
+                               x:Name="dateandtime" />
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Image Source="/assets/images/day/113.png"
+                               Width="40"
+                               Height="40"
+                               Margin="35,0,0,0" />
+
+                        <TextBlock Text="Mostly Cloudy"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="16"
+                                   x:Name="conditionText" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+
+                        <Image Source="/assets/images/day/113.png"
+                               Width="40"
+                               Height="40"
+                               Margin="35,0,0,0" />
+
+                        <TextBlock Text="Mostly Cloudy"
+                                   VerticalAlignment="Center"
+                                   HorizontalAlignment="Center"
+                                   FontSize="16" />
+                    </StackPanel>
+
+                    <TextBlock Margin="45,0,0,0"
+                               FontSize="30"
+                               x:Name="locationName" />
+
+                </StackPanel>
+
+            </Border>
+
+
+        </Grid>
+
+    </Border>
 </Window>

@@ -8,4 +8,22 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="assets\images\day\113.png" />
+    <None Remove="assets\images\day\299.png" />
+    <None Remove="assets\images\rias.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\images\day\113.png" />
+    <Resource Include="assets\images\day\299.png" />
+    <Resource Include="assets\images\rias.jpg" />
+  </ItemGroup>
+
 </Project>
