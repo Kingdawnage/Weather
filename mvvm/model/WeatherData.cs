@@ -21,9 +21,9 @@ namespace Weather.mvvm.model
                 var response = await ApiHelper.ApiClient.GetAsync(url);
                 response.EnsureSuccessStatusCode();
 
-                var value = await response.Content.ReadFromJsonAsync<DataClass.Rootobject>();
+                var forecast = await response.Content.ReadFromJsonAsync<DataClass.Rootobject>();
 
-                return value;
+                return forecast;
 
             }
             catch (HttpRequestException ex)
@@ -43,5 +43,6 @@ namespace Weather.mvvm.model
             }
 
         }
+
     }
 }

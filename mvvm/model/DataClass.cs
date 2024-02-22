@@ -1,12 +1,14 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Weather.mvvm.model
 {
-    internal class DataClass
+    public class DataClass
     {
         public class Rootobject
         {
@@ -63,16 +65,18 @@ namespace Weather.mvvm.model
 
         public class Forecast
         {
-            public Forecastday[] forecastday { get; set; }
+            [JsonPropertyName("Forecastday")]
+            public List<Forecastday> Day { get; set; }
         }
 
         public class Forecastday
         {
-            public string date { get; set; }
-            public float date_epoch { get; set; }
+            public DateOnly date { get; set; }
+            public DateTime date_epoch { get; set; }
             public Day day { get; set; }
             public Astro astro { get; set; }
-            public Hour[] hour { get; set; }
+            [JsonPropertyName("hour")]
+            public List<Hour> Hour { get; set; }
         }
 
         public class Day
@@ -121,7 +125,7 @@ namespace Weather.mvvm.model
         public class Hour
         {
             public int time_epoch { get; set; }
-            public string time { get; set; }
+            public DateTime time { get; set; }
             public float temp_c { get; set; }
             public float temp_f { get; set; }
             public int is_day { get; set; }

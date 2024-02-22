@@ -116,7 +116,7 @@
                             Grid.Row="1"
                             Grid.Column="0">
 
-                    <Image Source="{Binding FixedStatusImage}"
+                    <Image Source="{Binding StatusImage}"
                            Height="200"
                            Margin="25"
                            Stretch="Uniform"/>
@@ -127,14 +127,13 @@
                                FontSize="56"
                                Text="{Binding CurrentTemp}" />
 
-                    <TextBlock Text="Monday, 16:00"
+                    <TextBlock Text="{Binding DateAndTime}"
                                FontSize="26"
-                               Margin="45,0,0,0"
-                               x:Name="dateandtime" />
+                               Margin="45,0,0,0"/>
 
                     <StackPanel Orientation="Horizontal">
 
-                        <Image Source="{Binding FixedStatusImage}"
+                        <Image Source="{Binding StatusImage}"
                                Width="40"
                                Height="40"
                                Margin="35,0,0,0"
