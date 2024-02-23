@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
@@ -12,9 +13,14 @@ namespace Weather.mvvm.model
     {
         public override DateTime Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
-            dateTime = dateTime.AddSeconds(reader.GetInt32()).ToLocalTime();
-            return dateTime;
+            if (DateTime.TryParse(reader.GetString(), out var result))
+            {
+                return result;
+            }
+            else
+            {
+                throw new InvalidDataException("Invalid DateTime format...");
+            }
         }
 
         public override void Write(Utf8JsonWriter writer, DateTime value, JsonSerializerOptions options)
