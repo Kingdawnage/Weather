@@ -43,42 +43,110 @@ namespace Weather.mvvm.model
 
         public class Hour
         {
-            public long time_epoch { get; set; }
+            [JsonPropertyName("time_epoch")]
+            public long TimeEpoch { get; set; }
             [JsonPropertyName("time")]
             public DateTime Time { get; set; }
-            public float temp_c { get; set; }
-            public float temp_f { get; set; }
-            public int is_day { get; set; }
-            public float wind_mph { get; set; }
-            public float wind_kph { get; set; }
-            public int wind_degree { get; set; }
-            public string wind_dir { get; set; }
-            public int pressure_mb { get; set; }
-            public float pressure_in { get; set; }
-            public float precip_mm { get; set; }
-            public float precip_in { get; set; }
-            public int snow_cm { get; set; }
-            public int humidity { get; set; }
-            public int cloud { get; set; }
-            public float feelslike_c { get; set; }
-            public float feelslike_f { get; set; }
-            public float windchill_c { get; set; }
-            public float windchill_f { get; set; }
-            public float heatindex_c { get; set; }
-            public float heatindex_f { get; set; }
-            public float dewpoint_c { get; set; }
-            public float dewpoint_f { get; set; }
-            public int will_it_rain { get; set; }
-            public int chance_of_rain { get; set; }
-            public int will_it_snow { get; set; }
-            public int chance_of_snow { get; set; }
-            public float vis_km { get; set; }
-            public int vis_miles { get; set; }
-            public float gust_mph { get; set; }
-            public float gust_kph { get; set; }
-            public int uv { get; set; }
-            public float short_rad { get; set; }
-            public float diff_rad { get; set; }
+            [JsonPropertyName("temp_c")]
+            public float TempC { get; set; }
+            [JsonPropertyName("temp_f")]
+            public float TempF { get; set; }
+
+            [JsonPropertyName("is_day")]
+            public long IsDay { get; set; }
+
+            [JsonPropertyName("condition")]
+            public Condition? Condition { get; set; }
+
+            [JsonPropertyName("wind_mph")]
+            public float WindMph { get; set; }
+
+            [JsonPropertyName("wind_kph")]
+            public float WindKph { get; set; }
+
+            [JsonPropertyName("wind_degree")]
+            public float WindDegree { get; set; }
+
+            [JsonPropertyName("wind_dir")]
+            public string? WindDir { get; set; }
+
+            [JsonPropertyName("pressure_mb")]
+            public float PressureMb { get; set; }
+
+            [JsonPropertyName("pressure_in")]
+            public float PressureIn { get; set; }
+
+            [JsonPropertyName("precip_mm")]
+            public float PrecipMm { get; set; }
+
+            [JsonPropertyName("precip_in")]
+            public float PrecipIn { get; set; }
+
+            [JsonPropertyName("snow_cm")]
+            public float SnowCm { get; set; }
+
+            [JsonPropertyName("humidity")]
+            public float Humidity { get; set; }
+
+            [JsonPropertyName("cloud")]
+            public float Cloud { get; set; }
+
+            [JsonPropertyName("feelslike_c")]
+            public float FeelslikeC { get; set; }
+
+            [JsonPropertyName("feelslike_f")]
+            public float FeelslikeF { get; set; }
+
+            [JsonPropertyName("windchill_c")]
+            public float WindchillC { get; set; }
+
+            [JsonPropertyName("windchill_f")]
+            public float WindchillF { get; set; }
+
+            [JsonPropertyName("heatindex_c")]
+            public float HeatindexC { get; set; }
+
+            [JsonPropertyName("heatindex_f")]
+            public float HeatindexF { get; set; }
+
+            [JsonPropertyName("dewpoint_c")]
+            public float DewpointC { get; set; }
+
+            [JsonPropertyName("dewpoint_f")]
+            public float DewpointF { get; set; }
+
+            [JsonPropertyName("will_it_rain")]
+            public float WillItRain { get; set; }
+
+            [JsonPropertyName("chance_of_rain")]
+            public float ChanceOfRain { get; set; }
+
+            [JsonPropertyName("will_it_snow")]
+            public float WillItSnow { get; set; }
+
+            [JsonPropertyName("chance_of_snow")]
+            public float ChanceOfSnow { get; set; }
+
+            [JsonPropertyName("vis_km")]
+            public float VisKm { get; set; }
+
+            [JsonPropertyName("vis_miles")]
+            public float VisMiles { get; set; }
+
+            [JsonPropertyName("gust_mph")]
+            public float GustMph { get; set; }
+
+            [JsonPropertyName("gust_kph")]
+            public float GustKph { get; set; }
+
+            [JsonPropertyName("uv")]
+            public float Uv { get; set; }
+
+            [JsonPropertyName("short_rad")]
+            public float ShortRad { get; set; }
+
+            [JsonPropertyName("diff_rad")]
+            public float DiffRad { get; set; }
         }
     }
 }
