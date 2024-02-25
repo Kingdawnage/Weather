@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Weather.mvvm.viewmodel;
 
 namespace Weather.mvvm.view
 {
@@ -22,6 +23,7 @@ namespace Weather.mvvm.view
     {
         public HomeView()
         {
+            //DataContext = homeViewModel;
             InitializeComponent();
         }
     }

@@ -5,14 +5,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:Weather.mvvm.view"
              xmlns:viewmodel="clr-namespace:Weather.mvvm.viewmodel"
-             d:DataContext="{d:DesignInstance Type=viewmodel:MainViewModel}"
              mc:Ignorable="d"
              d:DesignHeight="500"
              d:DesignWidth="690">
     
-    <UserControl.DataContext>
+    <!--<UserControl.DataContext>
         <viewmodel:MainViewModel/>
-    </UserControl.DataContext>
+    </UserControl.DataContext>-->
     
     <Border CornerRadius="0,0,20,0">
         <Border.Background>
@@ -42,8 +41,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding SunImage}" />
+                        <TextBlock Text="{Binding SunTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center"
@@ -66,8 +65,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding MonImage}" />
+                        <TextBlock Text="{Binding MonTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center" />
@@ -89,8 +88,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding TueImage}" />
+                        <TextBlock Text="{Binding TueTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center" />
@@ -112,8 +111,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding WedImage}" />
+                        <TextBlock Text="{Binding WedTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center" />
@@ -134,8 +133,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding ThuImage}" />
+                        <TextBlock Text="{Binding ThuTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center" />
@@ -156,8 +155,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding FriImage}" />
+                        <TextBlock Text="{Binding FriTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center" />
@@ -178,8 +177,8 @@
                                    HorizontalAlignment="Center" />
                         <Image Width="50"
                                Height="50"
-                               Source="/assets/images/day/299.png" />
-                        <TextBlock Text="13"
+                               Source="{Binding SatImage}" />
+                        <TextBlock Text="{Binding SatTemp}"
                                    FontSize="14"
                                    VerticalAlignment="Bottom"
                                    HorizontalAlignment="Center" />

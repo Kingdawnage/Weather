@@ -14,6 +14,8 @@ namespace Weather.mvvm.model
         {
             [JsonPropertyName("forecast")]
             public Forecast? Forecast { get; set; }
+            [JsonPropertyName("current")]
+            public Current? Current { get; set; }
         }
 
         public class Condition
@@ -25,7 +27,29 @@ namespace Weather.mvvm.model
             [JsonPropertyName("code")]
             public int? Code { get; set; }
         }
-
+        public class Current
+        {
+            [JsonPropertyName("temp_c")]
+            public float TempC { get; set; }
+            [JsonPropertyName("temp_f")]
+            public float TempF { get; set; }
+            [JsonPropertyName("wind_mph")]
+            public float Wind_mph { get; set; }
+            [JsonPropertyName("wind_kph")]
+            public float Wind_kph { get; set; }
+            [JsonPropertyName("pressure_mb")]
+            public float Pressure_mb { get; set; }
+            public float pressure_in { get; set; }
+            public float precip_mm { get; set; }
+            public float precip_in { get; set; }
+            [JsonPropertyName("humidity")]
+            public int Humidity { get; set; }
+            public int cloud { get; set; }
+            [JsonPropertyName("uv")]
+            public float UV { get; set; }
+            public float gust_mph { get; set; }
+            public float gust_kph { get; set; }
+        }
         public class Forecast
         {
             [JsonPropertyName ("forecastday")]

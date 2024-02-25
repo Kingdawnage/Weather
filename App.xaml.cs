@@ -9,6 +9,7 @@ namespace Weather
     /// </summary>
     public partial class App : Application
     {
+      
     }
 
 }
